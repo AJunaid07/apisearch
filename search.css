@@ -1,0 +1,203 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a:visited {
+	color: #0f6fff;
+}
+a:link{
+	color: #0f6fff;
+}
+@font-face {
+	font-family: 'organetto';
+	src: url('assets/Organetto/Organetto-Bold.ttf'); 
+}
+.bajaj-search-results{
+  width: 100%;
+  border-radius: 25px;
+  margin-top: 10px;
+  opacity: 100%;
+  padding: 15px;
+  background-color: white;
+  box-shadow : 0 0 1px 0 #000;}
+
+ .header{
+	font-family: Arial, Helvetica, sans-serif; 
+	font-weight: 700;
+	font-size: 20px;
+	padding-left: 10px;
+
+ }
+
+ .suggestionheader{
+	font-family: Arial, Helvetica, sans-serif; 
+	font-weight: 700;
+	font-size: 15px;
+	text-align:center;
+
+ }
+ .sponsored{
+	 background-color: antiquewhite;
+ }
+ .sponsoredtext{
+	     padding: 0px 0px 5px 10px;
+    font-family: arial;
+    font-size: 12px;
+    text-decoration: underline;
+    font-weight: 800;
+	font-style: italic;
+ }
+ .time{
+	 color: #f9f9f9;
+	 opacity: 80%;
+	padding: 15px 5px 10px 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	text-align: center;
+	font-style: italic;
+	font-weight: 700;
+ }
+ .resulttext{
+	 padding-top:3px;
+	font-family: Arial, Helvetica, sans-serif; 
+	font-weight: 200;
+	font-size: 15px;
+	padding-left: 10px;
+
+ }
+.bajaj{
+    padding: 15px;
+    font-size: 56px;
+    text-align: center;
+    font-family: organetto;
+    color: #f9f9f9;
+}
+body {
+	display: flex;
+	min-height: 100vh;
+	background: #297eff;
+	align-items: center;
+	justify-content: center;
+}
+
+.search {
+	width: 60px;
+	height: 60px;
+	opacity: 80%;
+	transform: 0.5s;
+	background: #fff;
+	overflow: hidden;
+	position: relative;
+	border-radius: 60px;
+	box-shadow: 0 0 0 0 5px #2573ef;
+}
+
+.search.active {
+	width: 100%;
+}
+
+.suggestion{
+
+	width: 70%;
+	height: 35px;
+	margin-top: 4px;
+	margin-left: 16%;
+	padding-top: 10px;
+	opacity: 80%;
+	transform: 0.5s;
+	background: rgb(235, 235, 235);
+	overflow: hidden;
+	position: relative;
+	border-radius: 15px;
+	box-shadow: 0 0 0 0 5px #2573ef;
+
+
+}
+.search .icon {
+	top: 0;
+	left: 0;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	z-index: 1000;
+	cursor: pointer;
+	position: absolute;
+	background: #fff;
+	border-radius: 60px;
+	align-items: center;
+	justify-content: center;
+}
+
+.search .icon:before {
+	content: "";
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	border-radius: 50%;
+	border: 3px solid #287dfc;
+	transform: translate(-4px, -4px);
+}
+
+.search .icon:after {
+	content: "";
+	width: 3px;
+	height: 12px;
+	position: absolute;
+	background: #287dfc;
+	transform: translate(6px, 6px) rotate(315deg);
+}
+
+.search .input {
+	left: 60px;
+	width: 300px;
+	height: 60px;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+}
+
+.search .input input {
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+	outline: none;
+	font-size: 18px;
+	padding: 10px 0;
+	position: absolute;
+}
+
+.clear {
+	top: 50%;
+	right: 15px;
+	width: 15px;
+	height: 15px;
+	display: flex;
+	cursor: pointer;
+	background: #ff0;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	transform: translateY(-50%);
+}
+
+.clear:before {
+	width: 1px;
+	height: 15px;
+	content: "";
+	position: absolute;
+	background: #999;
+	transform: rotate(45deg);
+}
+
+.clear:after {
+	width: 1px;
+	height: 15px;
+	content: "";
+	position: absolute;
+	background: #999;
+	transform: rotate(315deg);
+}
