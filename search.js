@@ -1,22 +1,31 @@
-const fetch = require('node-fetch');
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-const url = 'https://bfhldevapigw.healthrx.co.in/wp-cms/v1/posts/';
+const API_URL = "https://bfhldevapigw.healthrx.co.in/wp-cms/v1/posts/";
 
-const options = {
-  method: 'GET',
-  headers: {
-    'content-type': 'application/json',
-    Name: 'Aditi',
-    Email: 'rajali069@gmail.com',
-    College: 'lpu',
-    StudentId: '123456',
-    'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-    'X-RapidAPI-Host': ''
-  },
-  body: '{"key1":"value","key2":"value"}'
-};
+const App = () => {
+  const [data, setData] = useState([]);
+  const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
-fetch(url, options)
-	.then(res => res.json())
-	.then(json => console.log(json))
-	.catch(err => console.error('error:' + err));
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await axios.get(API_URL, {
+        params: {
+          search,
+          page
+        }
+      });
+      setData(res.data);
+      setTotalPages(res.headers["x-wp-totalpages"]);
+    };
+    fetchData();
+  }, [search, page]);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    setPage(1);
+  };
+
+  const handleChange
